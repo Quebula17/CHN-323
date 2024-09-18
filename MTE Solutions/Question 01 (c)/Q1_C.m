@@ -12,7 +12,7 @@ for i = 2:length(velocity_data)-1
     acceleration(i) = (velocity_data(i+1) - velocity_data(i-1)) / (2 * dt); % centered-difference approximation
 end
 
-acceleration(1) = (velocity_data(2) - velocity_data(1)) / dt;
-acceleration(end) = (velocity_data(end) - velocity_data(end-1)) / dt;
+acceleration(1) = (-3*velocity_data(1) + 4*velocity_data(2) - velocity_data(3)) / 2*dt;
+acceleration(end) = (3*velocity_data(end) - 4*velocity_data(end-1) + velocity_data(end - 2)) / 2*dt;
 
 disp(acceleration);
